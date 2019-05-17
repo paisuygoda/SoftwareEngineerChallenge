@@ -1,4 +1,5 @@
-package jp.yahoo.training.exercise.chapter11.mod11exercise1;
+//Alternative implementation - No use of built-in List
+package Q1;
 
 import java.util.NoSuchElementException;
 
