@@ -1,5 +1,4 @@
-//Alternative implementation - No use of built-in collection
-package Q1;
+package jp.yahoo.training.exercise.chapter11.mod11exercise1;
 
 import java.util.NoSuchElementException;
 
@@ -26,9 +25,27 @@ public class LinkedQueue<T> implements Queue<T> {
 
     public LinkedQueue<T> deepCopy() {
         LinkedQueue<T> newQueue = new LinkedQueue<>();
+        Node<T> copyTargetNode;
+        Node<T> copyNextNode;
+        Node<T> originalTargetNode;
 
-        newQueue.first = this.first;
-        newQueue.last = this.last;
+        if (this.first != null) {
+
+            originalTargetNode = this.first;
+            copyTargetNode = new Node<>(originalTargetNode.data);
+            newQueue.first = copyTargetNode;
+
+            while (this.last != originalTargetNode) {
+
+                copyNextNode = new Node<>(originalTargetNode.next.data);
+                copyTargetNode.next = copyNextNode;
+
+                originalTargetNode = originalTargetNode.next;
+                copyTargetNode = copyNextNode;
+            }
+
+            newQueue.last = copyTargetNode;
+        }
 
         return newQueue;
     }
