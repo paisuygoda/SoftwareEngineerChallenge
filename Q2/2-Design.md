@@ -1,6 +1,6 @@
 Here is the flow of the proposed system.
 
-![Design Overview](./Q2/Design.png "Design Overview")
+![Design Overview](Design.png "Design Overview")
 
 # 1. Register user purchases to database
 
